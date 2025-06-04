@@ -1,0 +1,40 @@
+# macOS system files
+__MACOSX/
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Python
+*.pyc
+__pycache__/
+
+# Node
+node_modules/
+
+# Java
+*.class
+
+# Android/Gradle
+.gradle/
+build/
+*/build/
+
+# JetBrains IDEs
+.idea/
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Other common
+.env
+
+# Exclude embedded git repos
+*.git
+
+# Exclude all generated/intermediate files
+out/
+intermediates/ 

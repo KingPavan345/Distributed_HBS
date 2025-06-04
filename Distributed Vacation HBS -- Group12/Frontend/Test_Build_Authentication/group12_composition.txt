@@ -1,0 +1,23 @@
+Distributed Vacation Home Booking System  
+Programming Distributed Systems Project Summer Term 2025 
+ 
+Group 12:  
+ 
+Group Members 
+Pavan Sai Kappiri (Team Lead) 
+Mohammad Shajadul Karim 
+Shahinur Rahman 
+Mohammed Wafiul Abire Aonkon 
+ 
+Tasks:  
+1. Android Smartphone App Client 
+Task Owner: Pavan Sai Kappiri 
+ 
+2. CLI Tool For Admins 
+Task Owner: Mohammad Shajadul Karim 
+ 
+3. Authentication Microservice 
+Task Owner: Shahinur Rahman 
+ 
+4. Vacation Home Listings Microservice 
+Task Owner: Mohammed Wafiul Abire Aonkon 

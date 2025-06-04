@@ -1,0 +1,20 @@
+# base image
+FROM python:3.10-slim
+
+# set work directory
+WORKDIR /app
+
+# copy files
+COPY . /app
+
+RUN mkdir -p /app/logs
+
+# install dependencies
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# expose port
+EXPOSE 8000
+
+# run server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"] 

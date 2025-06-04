@@ -1,0 +1,32 @@
+{
+  "family": "auth-service",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "auth-service",
+      "image": "524522256295.dkr.ecr.eu-north-1.amazonaws.com/auth-service:latest",
+      "portMappings": [
+        { "containerPort": 8000, "hostPort": 8000, "protocol": "tcp" }
+      ],
+      "environment": [
+        { "name": "DATABASE_URL", "value": "postgresql://auth_user:auth_password@auth-db.cn4oosicouud.eu-north-1.rds.amazonaws.com:5432/auth_db" },
+        { "name": "DJANGO_SECRET_KEY", "value": "vhbs@12345" },
+        { "name": "DEBUG", "value": "False" },
+        { "name": "ALLOWED_HOSTS", "value": "*" },
+        { "name": "EMAIL_HOST", "value": "smtp.gmail.com" },
+        { "name": "EMAIL_PORT", "value": "587" },
+        { "name": "EMAIL_HOST_USER", "value": "pavansaiofficial@gmail.com" },
+        { "name": "EMAIL_HOST_PASSWORD", "value": "Pavan@345" },
+        { "name": "DEFAULT_FROM_EMAIL", "value": "pavansaiofficial@gmail.com" },
+        { "name": "FRONTEND_URL", "value": "http://localhost:8000" },
+        { "name": "DJANGO_SUPERUSER_USERNAME", "value": "admin" },
+        { "name": "DJANGO_SUPERUSER_EMAIL", "value": "admin@example.com" },
+        { "name": "DJANGO_SUPERUSER_PASSWORD", "value": "admin123" }
+      ]
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::524522256295:role/ecsTaskExecutionRole"
+}

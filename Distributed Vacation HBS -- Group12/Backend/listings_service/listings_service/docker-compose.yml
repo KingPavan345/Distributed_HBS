@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+    networks:
+      - app_network
+
+  auth-service:
+    build: 
+      context: ./auth_microservice
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:8000:8000"
+    environment:
+      - FLASK_SECRET_KEY=your-secure-secret-key-here
+      - MONGODB_URI=mongodb+srv://listings_user:%40l47896325O@listingms-pds.y5rsein.mongodb.net/?retryWrites=true&w=majority&appName=ListingMS-PDS
+      - DATABASE_URL=postgresql://auth_user:auth_password@db:5432/auth_db
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@example.com
+      - DJANGO_SUPERUSER_PASSWORD=admin123
+      - ALLOWED_HOSTS=*
+      - DJANGO_SECRET_KEY=YLKO2yPEYYAZ8q8
+      - DJANGO_ALLOWED_HOSTS=10.0.2.2,localhost,auth-service
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py create_superuser_if_not_exists &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./auth_microservice/auth_microservice/logs:/app/logs
+    networks:
+      - app_network
+
+  listings-service:
+    build: ./listings_service/listings_service
+    ports:
+      - "0.0.0.0:8001:8001"
+    environment:
+      - FLASK_SECRET_KEY=your-secure-secret-key-here
+      - MONGODB_URI=mongodb+srv://listings_user:%40l47896325O@listingms-pds.y5rsein.mongodb.net/?retryWrites=true&w=majority&appName=ListingMS-PDS
+      - AUTH_SERVICE_URL=http://auth-service:8000
+    depends_on:
+      - auth-service
+    restart: always
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge 

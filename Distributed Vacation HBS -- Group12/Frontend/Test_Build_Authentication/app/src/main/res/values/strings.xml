@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test Build Authentication</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="reset_password">Reset Password</string>
+    <!-- Hints and placeholders -->
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_reset_email">Enter email to reset password</string>
+
+    <!-- Status messages -->
+    <string name="register_success">Registration successful</string>
+    <string name="register_failed">Registration failed</string>
+    <string name="login_success">Login successful</string>
+    <string name="login_failed">Login failed</string>
+    <string name="reset_sent">Reset email sent</string>
+    <string name="reset_failed">Reset failed</string>
+
+    <!-- Vacation Home List -->
+    <string name="vacation_homes">Vacation Homes</string>
+    <string name="search_vacation_homes">Search vacation homes…</string>
+    <string name="per_night">$%1$d per night</string>
+    <string name="reviews_count">%1$d reviews</string>
+    <string name="price_per_night">$%1$.2f per night</string>
+    <string name="rating_and_reviews">%1$.1f (%2$d reviews)</string>
+    
+    <!-- Vacation Home Detail -->
+    <string name="hosted_by">Hosted by %1$s</string>
+    <string name="about_this_place">About this place</string>
+    <string name="what_this_place_offers">What this place offers</string>
+    <string name="reviews">Reviews</string>
+    <string name="no_reviews_yet">No reviews yet</string>
+    <string name="user_profile_picture">User profile picture</string>
+    <string name="host_profile_picture">Host profile picture</string>
+    <string name="vacation_home_image">Vacation home image</string>
+
+    <string name="fill_all_fields">Please fill in all fields</string>
+    <string name="registration_successful_title">Registration Successful</string>
+    <string name="registration_successful_message">Please check your email to verify your account before logging in.</string>
+    <string name="ok">OK</string>
+    <string name="registration_successful_email_verify">Registration successful for %s! Please verify your email.</string>
+    <string name="invalid_response_from_server">Invalid response from server</string>
+    <string name="error_parsing_server_response">Error parsing server response</string>
+    <string name="network_error">Network error. Please check your connection.</string>
+    <string name="error_status">Error: %d</string>
+    <string name="invalid_username_password">Invalid username or password</string>
+    <string name="server_endpoint_not_found">Server endpoint not found</string>
+    <string name="error_processing_server_response">Error processing server response.</string>
+
+    <!-- Guest View -->
+    <string name="guest_view_title">Property Listings</string>
+    <string name="sort_by">Sort By</string>
+    <string name="filter_by_price">Filter By Price</string>
+    <string name="no_listings_found">No listings found</string>
+    <string name="error_unauthorized">Unauthorized access</string>
+    <string name="error_forbidden">Access forbidden</string>
+    <string name="error_not_found">Resource not found</string>
+    <string name="error_loading_listings">Error loading listings: %1$s</string>
+    <string name="error_searching_listings">Error searching listings: %1$s</string>
+
+    <!-- Review Item -->
+    <string name="user_image">User image</string>
+    <string name="edit_review">Edit review</string>
+    <string name="delete_review">Delete review</string>
+    
+    <!-- Price Ranges -->
+    <string name="price_range_0_100">$0 - $100</string>
+    <string name="price_range_100_200">$100 - $200</string>
+    <string name="price_range_200_500">$200 - $500</string>
+    <string name="price_range_500_plus">$500+</string>
+    
+    <!-- Sort Options -->
+    <string name="sort_price_low_high">Price: Low to High</string>
+    <string name="sort_price_high_low">Price: High to Low</string>
+    <string name="sort_rating">Highest Rated</string>
+    <string name="sort_newest">Newest First</string>
+
+    <string name="price_format">$%.2f/night</string>
+    <string name="review_count_format">(%d reviews)</string>
+    <string name="hosted_by_format">Hosted by %s</string>
+</resources> 

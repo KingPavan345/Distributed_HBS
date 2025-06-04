@@ -1,0 +1,24 @@
+{
+  "family": "listings-service",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "listings-service",
+      "image": "524522256295.dkr.ecr.eu-north-1.amazonaws.com/listings-service:latest",
+      "portMappings": [
+        { "containerPort": 8001, "hostPort": 8001, "protocol": "tcp" }
+      ],
+      "environment": [
+        { "name": "FLASK_SECRET_KEY", "value": "vhbs@12345" },
+        { "name": "MONGODB_URI", "value": "mongodb+srv://listings_user:%40l47896325O@listingms-pds.y5rsein.mongodb.net/?retryWrites=true&w=majority&appName=ListingMS-PDS" },
+        { "name": "AUTH_SERVICE_URL", "value": "http://auth-service:8000" },
+        { "name": "AWS_BUCKET_NAME", "value": "<your-bucket-name>" },
+        { "name": "JWT_SECRET_KEY", "value": "<your-jwt-secret-key>" }
+      ]
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::524522256295:role/ecsTaskExecutionRole"
+}
