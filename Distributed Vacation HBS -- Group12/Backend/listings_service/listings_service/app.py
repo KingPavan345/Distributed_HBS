@@ -1,3 +1,4 @@
+2
 """
 Listings Service Main Application
 Author: Wafiul Abire Aonkon
@@ -320,7 +321,8 @@ def update_review(user_id, listing_id, review_id):
             {"_id": listing_id, "reviews._id": review_id},
             {"reviews.$": 1}
         )
-        
+        0
+
         if not listing or not listing.get('reviews'):
             return jsonify({"error": "Review not found"}), 404
             

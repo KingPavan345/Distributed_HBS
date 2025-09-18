@@ -166,7 +166,6 @@ python menu_cli.py
   - For Android emulator, use `10.0.2.2` for backend URLs.
 
 
-
 ## Authors
 
 - **Pavan Sai Kappiri** (Team Lead)(Frontend)
